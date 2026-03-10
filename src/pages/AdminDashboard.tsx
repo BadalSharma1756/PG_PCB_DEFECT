@@ -319,7 +319,7 @@ const AdminDashboard = () => {
             <Card className={`shadow-sm bg-white border border-gray-200 cursor-pointer hover:shadow-md transition-shadow ${CARD_BORDER_COLORS[7]}`} onClick={() => window.open(qrUrl, "_blank")}>
               <CardContent className="pt-2 pb-2 flex flex-col items-center justify-center">
                 <QRCodeSVG value={qrUrl} size={48} />
-                <p className="text-[9px] font-semibold text-gray-500 tracking-widest mt-1">QR ENTRY</p>
+                 {/* <p className="text-[9px] font-semibold text-gray-500 tracking-widest mt-1">QR ENTRY</p> */} 
               </CardContent>
             </Card>
           </div>
