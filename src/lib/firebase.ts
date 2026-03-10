@@ -12,7 +12,7 @@ import {
   limit,
   type Unsubscribe,
 } from "firebase/firestore";
-import { getDb, COLLECTIONS, CONFIG_DOC_ID } from "./firebase";
+// import { getDb, COLLECTIONS, CONFIG_DOC_ID } from "./firebase";
 import type { Defect, EmployeeUser, SessionRequest } from "./types";
 
 export interface AppConfig {
