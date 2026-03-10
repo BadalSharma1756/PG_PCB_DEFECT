@@ -24,7 +24,14 @@ export function getDb() {
   if (!a) return null;
   const db = getFirestore(a);
   try {
-    enableIndexedDbPersistence(db).catch(() => {});
+    enableIndexedDbPersistence(db).catch((err) => {
+      // Surface persistence errors to help diagnose multi-device fetch issues.
+      // Common errors: 'failed-precondition' (multiple tabs) or 'unimplemented' (browser)
+      // Keep app working even if persistence isn't available.
+      // Log the error so it appears in browser console and deployment logs.
+      // eslint-disable-next-line no-console
+      console.warn("IndexedDB persistence not enabled:", err);
+    });
   } catch (_) {}
   return db;
 }
