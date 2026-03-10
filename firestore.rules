@@ -1,0 +1,10 @@
+rules_version = '2';
+service cloud.firestore {
+  match /databases/{database}/documents {
+    // Allow read/write to all collections for this app (development / single-tenant).
+    // For production, restrict by auth or use App Check.
+    match /{document=**} {
+      allow read, write: if true;
+    }
+  }
+}
